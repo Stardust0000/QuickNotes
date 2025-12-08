@@ -71,6 +71,7 @@ All notes are linked to the logged-in user using a **ForeignKey** relationship t
 ---
 
 ## 📁 Project Structure (Simplified)
+```bash
 QuickNotes
 ├─ 📄 manage.py
 ├─ 📄 requirements.txt
@@ -80,24 +81,24 @@ QuickNotes
 ├─ 📁 notes
 │  ├─ 📁 migrations
 │  ├─ 📁 static
-│  │  ├─ 🎨 style.css
+│  │  ├─ style.css
 │  │  └─ 📁 js
-│  │     └─ ✨ theme.js
+│  │     └─ theme.js
 │  ├─ 📁 templates
-│  │  ├─ 🏠 home.html
-│  │  ├─ 🔐 login.html
-│  │  └─ 📝 signup.html
-│  ├─ 🧠 models.py
-│  ├─ 🧩 forms.py
-│  ├─ 🛠 views.py
-│  └─ 🌐 urls.py
+│  │  ├─ home.html
+│  │  ├─ login.html
+│  │  └─ signup.html
+│  ├─ models.py
+│  ├─ forms.py
+│  ├─ views.py
+│  └─ urls.py
 │
 └─ 📁 quicknotes
-   ├─ ⚙️ settings.py
-   ├─ 🌐 urls.py
-   ├─ 🚀 asgi.py
-   └─ 🚀 wsgi.py
-
+   ├─ settings.py
+   ├─ urls.py
+   ├─ asgi.py
+   └─ wsgi.py
+```
 
 ---
 
