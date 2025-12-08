@@ -71,32 +71,33 @@ All notes are linked to the logged-in user using a **ForeignKey** relationship t
 ---
 
 ## 📁 Project Structure (Simplified)
-QuickNotes/
-│ manage.py
-│ requirements.txt
-│ .gitignore
-│ db.sqlite3 (local only, ignored in Git)
+QuickNotes
+├─ 📄 manage.py
+├─ 📄 requirements.txt
+├─ 📄 .gitignore
+├─ 🗄 db.sqlite3
 │
-├─ notes/
-│ ├─ migrations/
-│ ├─ static/
-│ │ ├─ style.css
-│ │ └─ js/
-│ │ └─ theme.js
-│ ├─ templates/
-│ │ ├─ home.html
-│ │ ├─ login.html
-│ │ └─ signup.html
-│ ├─ models.py
-│ ├─ forms.py
-│ ├─ views.py
-│ └─ urls.py
+├─ 📁 notes
+│  ├─ 📁 migrations
+│  ├─ 📁 static
+│  │  ├─ 🎨 style.css
+│  │  └─ 📁 js
+│  │     └─ ✨ theme.js
+│  ├─ 📁 templates
+│  │  ├─ 🏠 home.html
+│  │  ├─ 🔐 login.html
+│  │  └─ 📝 signup.html
+│  ├─ 🧠 models.py
+│  ├─ 🧩 forms.py
+│  ├─ 🛠 views.py
+│  └─ 🌐 urls.py
 │
-└─ quicknotes/
-├─ settings.py
-├─ urls.py
-├─ asgi.py
-└─ wsgi.py
+└─ 📁 quicknotes
+   ├─ ⚙️ settings.py
+   ├─ 🌐 urls.py
+   ├─ 🚀 asgi.py
+   └─ 🚀 wsgi.py
+
 
 ---
 
