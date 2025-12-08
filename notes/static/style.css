@@ -28,7 +28,14 @@ body.dark-theme {
     margin: 10px;
 }
 
-h1, h2 {
+h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    color: palevioletred;
+}
+h2 {
+    font-size: 22px;
     text-align: center;
     font-weight: bold;
     font-size: 30px;
@@ -265,7 +272,15 @@ span {
 
 /* Small screen view */
 @media (max-width: 768px) {
-    
+    h1{
+        font-size: 20px;
+    }
+    h2{
+        font-size: 15px;
+    }
+    p {
+        font-size: 12px;
+    }
     .top-bar {
         display: flex;
         flex-direction: row;
@@ -285,7 +300,7 @@ span {
     .txtarea {
         width: 100%;
         height: 36px;
-        font-size: 15px;
+        font-size: 12px;
     }
 
     .modebtn, .btn {
@@ -304,73 +319,13 @@ span {
     }
 
     span {
-        font-size: 14px;
+        font-size: 12px;
         padding: 8px;
         width: 100%;
     }
 
     .icon {
         width: 38px;
-        height: 32px;
+        height: 38px;
     }
 }
-
-
-/* Small screen view */
-/* @media (max-width: 425px) {
-    
-    h1 {
-        font-size: 22px;
-    }
-
-    .top-bar {
-        flex-direction: row;
-        gap: 10px;
-        text-align: center;
-    }
-
-    .note-form {
-        width: 95vw;
-        display: flex;
-        gap: 8px;
-        justify-content: center;
-    }
-
-    .txtarea {
-        width: 100%;
-        height: 35px;
-        font-size: 14px;
-    }
-
-    .modebtn {
-        width: 50px;
-        height: 35px;
-    }
-
-    /* Notes List */
-    /* .notes-list {
-        grid-template-columns: 1fr auto auto auto;
-        width: auto;
-        column-gap: 6px;
-        padding: 6px;
-    }
-
-    span {
-        width: 100%;
-        font-size: 14px;
-        padding: 8px;
-    }
-
-    .icon {
-        width: 38px;
-        height: 32px;
-        font-size: 16px;
-        margin: 5px;
-    }
-
-    .signup-container,
-    .logout-btn {
-        top: 5px;
-        right: 5px;
-    }
-} */
