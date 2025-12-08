@@ -34,16 +34,10 @@
     {% if not request.user.is_authenticated %}
         <!-- sign up -->
         {% url 'signup' as signup_url %}
-        <div class="signup-container" style="    display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
-    align-items: flex-end;"> 
+        <div class="signup-container" style="display: flex; justify-content: flex-end; flex-direction: column;align-items: flex-end;"> 
             <button class="btn" onclick="location.href='{{ signup_url }}'"> 
             Signup 
             </button>
-            <p>
-                (Hi! Please login to add your notes!)
-            </p>
         </div>
     {% else %}
         <!-- logout -->

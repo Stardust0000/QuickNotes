@@ -282,6 +282,9 @@ span {
     p {
         font-size: 12px;
     }
+    .lnk {
+        font-size: 12px;
+    }
     .top-bar {
         display: flex;
         flex-direction: row;
