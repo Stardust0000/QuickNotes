@@ -35,7 +35,7 @@
         <!-- sign up -->
         {% url 'signup' as signup_url %}
         <div class="signup-container" style="display: flex; justify-content: flex-end; flex-direction: column;align-items: flex-end;"> 
-            <button class="btn" onclick="location.href='{{ signup_url }}'"> 
+            <button class="btn height" onclick="location.href='{{ signup_url }}'"> 
             Signup 
             </button>
         </div>
@@ -49,16 +49,16 @@
 
     <!-- Note area with add and mode btn -->
     <div class="txt-display top-bar">
-        <form method="POST" novalidate class="note-form">
+        <form method="POST" novalidate class="note-form height">
             {% csrf_token %}
             {{ form.text }}
 
             {% if form.instance.id %}
-                <button type="submit" class="btn">
+                <button type="submit" class="btn height">
                     Update
                 </button>
             {% else %}
-                <button type="submit" class="btn">
+                <button type="submit" class="btn height">
                     Add
                 </button>    
             {% endif %}
