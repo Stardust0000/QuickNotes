@@ -273,11 +273,11 @@ span {
 /* Small screen view */
 @media (max-width: 768px) {
     h1{
-        margin-top: 10px;
-        font-size: 30px;
+        font-size: 22px;
+        margin-top: 50px;
     }
     h2{
-        font-size: 20px;
+        font-size: 15px;
     }
     p {
         font-size: 12px;
