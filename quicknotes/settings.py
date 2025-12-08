@@ -31,6 +31,10 @@ ALLOWED_HOSTS = [
     "quicknotes-6fgq.onrender.com",
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://quicknotes-6fgq.onrender.com",
+]
+
 
 # Application definition
 
