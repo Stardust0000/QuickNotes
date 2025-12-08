@@ -1,0 +1,323 @@
+body.light-theme {
+    background: linear-gradient(90deg, #fcd6e8 0%, #ffedf5 50%, #e2ebff 100%); ;
+    --text: #2b2929;
+    --card:#fcd6e8;
+    --border:#fdbfdc;
+    --shadow: #fcd6e8;
+    --hover:#f8accf;
+    --button : #d683aa;
+    --error: #fc0480 ;
+    --errorbg:#f812858c;
+    transition: opacity 0.3s ease-in-out;
+    padding: 0px;
+    margin: 10px;
+}
+
+body.dark-theme {
+    background: linear-gradient(135deg, #242036 0%, #3b3146 100%);
+    --text: #e6e1ff;
+    --card: #2f2b3c;
+    --border:#47405c;
+    --shadow: #fcd6e8;
+    --hover:#f8accf;
+    --button : #d683aa;
+    --error:#dc143c;
+    --errorbg:#dc143c69;
+    transition: opacity 0.3s ease-in-out;
+    padding: 0px;
+    margin: 10px;
+}
+
+h1, h2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    color: palevioletred;
+}
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    width: 100%;
+    margin-top: 55px;
+    transition:all 0.3s ease-in-out;
+}
+
+.note-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+.txt-display form{
+    display: flex;
+    gap: 10px;
+    justify-content: space-evenly;
+    width: 100%;
+    transition:all 0.3s ease-in-out;
+}
+.txtarea {
+    flex: 1;
+    width: auto;
+    height: 50px;
+    padding: 5px;
+    border-radius: 7px;
+    border: 1px solid var(--border);
+    background-color:var(--card);
+    color: var(--text);
+    margin: 0 10px;
+    box-shadow: inset 0px 0px 1px 1px var(--shadow); 
+    transition: background-color 0.3s ease, color 0.3s, box-shadow 0.3s ease;
+}
+
+body.show-error .top-bar {
+    filter: blur(6px);
+    pointer-events: none;
+    transition: filter 0.3s ease;
+    
+}
+.error-msg {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--error);
+    font-size: 24px;
+    background-color:var(--errorbg) ;
+    backdrop-filter: blur(4px);
+    padding: 15px 25px;
+    margin: 6px 12px;
+    opacity: 0.9;
+    font-weight: 500;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 12px var(--errorbg); 
+    animation: fadeOutRemove 2.2s ease-in-out;
+}
+@keyframes fadeOutRemove{
+  0% {opacity: 0;}
+  10% {opacity: 1;}
+  80% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+.signup-container, .logout-btn, .modebtn-container {
+    top: 1px;
+    right: 1px;
+    position: absolute;
+}
+
+.signup-container p {
+    margin: 1px 0 0;
+    text-align: center;
+    color: var(--text); 
+    font-size: 14px; 
+    text-align: center;
+    position: relative;
+}
+
+.modebtn {
+    height: 40px;
+    width: 60px;
+    border-radius: 10px;
+    margin: 10px;
+    border: 1px solid var(--border);
+    box-shadow: inset 0px 0px 1px 1px var(--shadow); 
+    background-color: var(--card);
+    color: var(--text);
+    transition: background-color 0.3s ease, color 0.3s, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.modebtn:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 8px var(--hover);
+}
+
+hr {
+    opacity: 0.6;
+}
+
+.btn {
+    width: 60px;
+    height: 45px;
+    border-radius: 10px;
+    margin: 10px;
+    border: 1px solid var(--border);
+    box-shadow: inset 0px 0px 1px 1px var(--shadow); 
+    background-color: var(--card);
+    color: var(--text);
+    transition: background-color 0.3s ease, color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 0 6px var(--border), 0 0 12px var(--hover);
+}
+
+.btn:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 8px var(--hover);
+}
+
+.notes-list {
+    display: grid;
+    grid-template-columns: 1fr 45px 45px 45px; /* equal icon spacing */
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
+    margin: 10px auto;
+    
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    width: 90%;
+}
+
+.icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    color: var(--button);
+    font-size: 20px;
+
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.icon:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 6px var(--hover);
+    color: var(--hover);   /* glow highlight */
+}
+
+
+span {
+    border-bottom: 1px solid var(--border);
+    background-color: var(--card);
+    color: var(--text);
+    width: 60vw;
+    padding: 10px;
+    border-radius: 10px; 
+    transition: background-color 0.3s ease, color 0.3s;
+}
+
+.done {
+    text-decoration: line-through;
+    opacity: 0.5;
+    transform: scale(0.98);
+    filter: blur(0.6px);
+    transition: opacity 0.3s ease, color 0.3s, transform 2s ease;
+}
+
+/************** login.html css ************/
+.inputbox {
+    padding: 15px;
+    border-radius: 7px;
+    border: 1px solid var(--border);
+    background-color:var(--card);
+    color: var(--text);
+    margin: 0 10px;
+    box-shadow: inset 0px 0px 5px 1px var(--shadow); 
+    transition: background-color 0.3s ease, color 0.3s, box-shadow 0.3s ease;
+    width: 300px;
+    height: 30px;
+    margin: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+
+.user-logo, .password-logo {
+    display: flex;
+    align-items: center;
+}
+.form-input {
+    padding: 40px;
+    color: var(--text);
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.big-size {
+    width: 40px
+}
+
+.lnk {
+    text-decoration: underline;
+    color: var(--text);
+    opacity: 0.7;
+    padding: 10px;
+
+}
+
+
+/* Mobile view */
+@media (max-width: 425px) {
+    
+    h1 {
+        font-size: 22px;
+    }
+
+    .top-bar {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .note-form {
+        width: 95vw;
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+    }
+
+    .txtarea {
+        width: 100%;
+        height: 35px;
+        font-size: 14px;
+    }
+
+    .modebtn {
+        width: 50px;
+        height: 35px;
+    }
+
+    /* Notes List */
+    .notes-list {
+        grid-template-columns: 1fr auto auto auto;
+        width: auto;
+        column-gap: 6px;
+        padding: 6px;
+    }
+
+    span {
+        width: 100%;
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .icon {
+        width: 38px;
+        height: 32px;
+        font-size: 16px;
+        margin: 5px;
+    }
+
+    .signup-container,
+    .logout-btn {
+        top: 5px;
+        right: 5px;
+    }
+}

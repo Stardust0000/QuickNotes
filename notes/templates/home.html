@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="https://kit.fontawesome.com/3cbf562bfa.js" crossorigin="anonymous"></script>
+    <title>Home Page</title>
+</head>
+
+<body class="light-theme">
+
+    <h1> Quick Notes </h1>
+
+    <!-- error message -->
+    {% if messages %}
+            {% for message in messages %}
+                <div class="error-msg">
+                    {{ message }}
+                </div>
+                <script>
+                    document.body.classList.add("show-error");
+                    const msg = document.querySelector(".error-msg");
+                    msg.addEventListener("animationend", () => {
+                        msg.style.display = "none";
+                        document.body.classList.remove("show-error");
+                    });
+                </script>
+            {% endfor %}
+    {% endif %}
+
+    <!-- authentication checkpoint -->
+    {% if not request.user.is_authenticated %}
+        <!-- sign up -->
+        {% url 'signup' as signup_url %}
+        <div class="signup-container" style="    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-end;"> 
+            <button class="btn" onclick="location.href='{{ signup_url }}'"> 
+            Signup 
+            </button>
+            <p>
+                (Hi! Please login to add your notes!)
+            </p>
+        </div>
+    {% else %}
+        <!-- logout -->
+        {% url 'logout' as logout_url %}
+            <button class="btn logout-btn icon" onclick="location.href = '{{ logout_url }}'">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            </button>
+    {% endif %}
+
+    <!-- Note area with add and mode btn -->
+    <div class="txt-display top-bar">
+        <form method="POST" novalidate class="note-form">
+            {% csrf_token %}
+            {{ form.text }}
+
+            {% if form.instance.id %}
+                <button type="submit" class="btn">
+                    Update
+                </button>
+            {% else %}
+                <button type="submit" class="btn">
+                    Add
+                </button>    
+            {% endif %}
+        </form>
+
+        <button type="button" onclick="mode()" class="modebtn icon">
+            <i class="fa-solid fa-circle-half-stroke"></i>
+        </button>
+    </div>
+<hr>
+    <!---------------- Show all notes ------------------>
+
+    <ol  class="display-container">
+
+        {% for note in notes %}
+        
+            <li class="notes-list">
+
+                    {% if note.status %}
+                        <span class="done dir">
+                            {{ note.text }}
+                        </span>
+                    {% else %}
+                        <span>{{note.text}}</span>
+                    {% endif %}
+
+                  <!----Edit notes ---->
+                
+                    {% url 'edit' note.id as edit_url %}
+                    {% if not note.status %}
+                        <button onclick="location.href='{{ edit_url }}'" class="icon">
+                        <i class="fa-solid fa-square-pen"></i></button>
+                    {% endif %}
+                
+                  <!---- Done/Undo Toggle --->
+                    {% url 'status' note.id as toggle_url %}
+                    <button onclick="location.href='{{ toggle_url }}'" class="icon">
+                        {% if note.status %} 
+                            <i class="fa-solid fa-arrow-rotate-left"></i> 
+                        {% else %} 
+                            <i class="fa-solid fa-circle-check"></i> 
+                        {% endif %}
+                    </button>
+                
+                  <!--- Delete notes --->
+                    <form method="POST" action="{% url 'delete' note.id %}">
+                        {% csrf_token %}
+                        <button class="icon">
+                           <i class="fa-solid fa-trash-arrow-up"></i>
+                        </button>
+                    </form>   
+            </li>
+        
+            {% endfor %}
+
+    </ol>
+
+{% load static %}
+
+<script src="{% static 'js/theme.js' %}"></script> 
+</body>
+</html>

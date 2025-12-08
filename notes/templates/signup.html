@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Sign Up</title>
+</head>
+<body class="light-theme dark-theme">
+    <h2>Welcome to Quick Notes!</h2> 
+    <h2>Signup</h2>
+    
+    <div class="modebtn-container">
+        <button onclick="mode()" class="modebtn align">
+            Mode
+        </button>
+    </div>
+
+    <form method="POST" class="form-input">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Enter your username" class="inputbox" required>
+        <input type="password" name="password1" placeholder="Enter your password" class="inputbox" required>
+        <input type="password" name="password2"
+        placeholder="Confirm your password" class="inputbox" required>
+        <button type="submit" class="btn big-size" style="width: 100px; height: 40px;">Create Account</button>
+        <a class="lnk" href="{% url 'login' %}">Already have an account?</a>
+    </form>
+
+    {% if form.errors %}
+        {% for field in form %}
+            {% for error in field.errors %}
+                <script>    
+                alert('{{error}}')
+                </script>
+            {% endfor %}
+        {% endfor %}
+    {% endif %}
+
+    
+
+{% load static %}
+<script src="{% static 'js/theme.js' %}"></script> 
+</body>
+</html>
