@@ -115,7 +115,7 @@ QuickNotes
 ## Author
 
 Created with care by **CrimsonShadow**  
-GitHub: [Stardust0000](https://github.com/Stardust0000) ✨
+GitHub: [Stardust0000](https://github.com/Stardust0000)
 
 This project was built to practice:
 
