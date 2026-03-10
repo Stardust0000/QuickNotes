@@ -5,21 +5,21 @@ Create, edit, complete, and delete notes — all stored securely per user.
 
 ---
 
-## 🌟 Features
+## Features
 
-- ✅ User Signup & Login (Django Auth)
-- ✅ Add New Notes
-- ✅ Edit Existing Notes
-- ✅ Mark Notes as Done / Undo
-- ✅ Delete Notes
-- ✅ Notes filtered by logged-in user only
-- ✅ Dark / Light Theme toggle (saved in Local Storage)
-- ✅ Form validation (no empty or junk notes)
-- ✅ Responsive UI with hover and blur effects
+- User Signup & Login using Django Authentication
+- Create new notes
+- Edit existing notes
+- Mark notes as completed / undo completion
+- Delete notes
+- Notes filtered per authenticated user
+- Dark / Light theme toggle (stored in Local Storage)
+- Form validation to prevent empty or invalid notes
+- Responsive UI with interactive hover effects
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Backend:** Django (Python)
 - **Frontend:** HTML, CSS, JavaScript
@@ -29,7 +29,7 @@ Create, edit, complete, and delete notes — all stored securely per user.
 
 ---
 
-## 🚀 Installation & Setup
+##  Installation & Setup
 
 ```bash
 # Clone this repository
@@ -54,37 +54,37 @@ http://127.0.0.1:8000/
 ```
 ---
 
-## 🔐 Authentication Behavior
+## Authentication Behavior
 
-### ✔ Logged-in users can:
+### Logged-in users can:
 - Add notes
 - Edit notes
 - Mark notes as Done / Undo
 - Delete notes
 
-### 🚫 Non-logged-in users:
-- Can see the home page layout
-- Cannot add or modify notes (they are redirected to Login/Signup)
+### Non-logged-in users:
+- Can view the home page layout
+- Are redirected to login/signup when attempting note actions
 
 All notes are linked to the logged-in user using a **ForeignKey** relationship to Django's built-in User model.
 
 ---
 
-## 📁 Project Structure (Simplified)
+## Project Structure (Simplified)
 ```bash
 QuickNotes
-├─ 📄 manage.py
-├─ 📄 requirements.txt
-├─ 📄 .gitignore
-├─ 🗄 db.sqlite3
+├─  manage.py
+├─  requirements.txt
+├─  .gitignore
+├─  db.sqlite3
 │
-├─ 📁 notes
-│  ├─ 📁 migrations
-│  ├─ 📁 static
+├─  notes
+│  ├─  migrations
+│  ├─  static
 │  │  ├─ style.css
-│  │  └─ 📁 js
+│  │  └─  js
 │  │     └─ theme.js
-│  ├─ 📁 templates
+│  ├─  templates
 │  │  ├─ home.html
 │  │  ├─ login.html
 │  │  └─ signup.html
@@ -93,7 +93,7 @@ QuickNotes
 │  ├─ views.py
 │  └─ urls.py
 │
-└─ 📁 quicknotes
+└─  quicknotes
    ├─ settings.py
    ├─ urls.py
    ├─ asgi.py
@@ -102,15 +102,17 @@ QuickNotes
 
 ---
 
-## ✨ Future Improvements
+## Future Improvements
 
-- ⏰ Add reminders and due dates
-- 🏷 Add tags/categories to group notes
-- 🔍 Add search and filters
+- Add reminders and due dates
+- Add tags and categories for notes
+- Implement search functionality
+- Add pagination for large note lists
+- Deploy application using Docker and cloud hosting
 
 ---
 
-## 💝 Author
+## Author
 
 Created with care by **CrimsonShadow**  
 GitHub: [Stardust0000](https://github.com/Stardust0000) ✨
